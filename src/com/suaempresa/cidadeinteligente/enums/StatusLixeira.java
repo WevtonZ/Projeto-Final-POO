@@ -5,5 +5,6 @@ public enum StatusLixeira{
     CHEIA,
     EM_COLETA,
     MANUTENCAO
+
 }
 
