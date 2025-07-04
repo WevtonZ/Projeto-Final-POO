@@ -1,0 +1,55 @@
+# --- Cenário de Simulação para testar o padrão BRIDGE ---
+
+# --- FASE 1: SETUP DA CIDADE COM CAMINHÕES ESPECIALIZADOS ---
+# Criando uma frota com caminhões de tipos diferentes.
+# O novo formato é: CRIAR_CAMINHAO <ID> <CAPACIDADE> <TIPO_DE_LIXO>
+CRIAR_CAMINHAO 101 1200.0 ORGANICO
+CRIAR_CAMINHAO 102 1500.0 RECICLAVEL
+CRIAR_CAMINHAO 103 800.0 VIDRO
+CRIAR_CAMINHAO 104 1000.0 METAL
+
+# Criando lixeiras com os mesmos tipos
+CRIAR_LIXEIRA 400.0 ORGANICO
+CRIAR_LIXEIRA 500.0 RECICLAVEL
+CRIAR_LIXEIRA 300.0 VIDRO
+CRIAR_LIXEIRA 450.0 METAL
+CRIAR_LIXEIRA 400.0 ORGANICO
+
+PASSAR_TURNO
+
+# --- FASE 2: TESTE DE COLETA DIRECIONADA ---
+# Enchendo lixeiras de tipos diferentes para forçar coletas separadas.
+ADICIONAR_LIXO 1 410.0 # Lixeira de lixo ORGÂNICO
+ADICIONAR_LIXO 2 510.0 # Lixeira de lixo RECICLÁVEL
+
+# Neste turno, a Central deve detectar as 2 lixeiras cheias.
+# Ela deve despachar o caminhão 101 (ORGÂNICO) para a lixeira 1
+# E o caminhão 102 (RECICLÁVEL) para a lixeira 2.
+PASSAR_TURNO
+
+# Os caminhões executam a coleta.
+PASSAR_TURNO
+
+# --- FASE 3: TESTE DE FILA DE ESPERA ---
+# Enchendo duas lixeiras do mesmo tipo, mas apenas um caminhão disponível.
+ADICIONAR_LIXO 3 330.0 # Lixeira de VIDRO
+ADICIONAR_LIXO 4 480.0 # Lixeira de METAL
+
+PASSAR_TURNO
+
+# Agora, vamos encher outra lixeira de VIDRO.
+ADICIONAR_LIXO 5 410.0 # Outra lixeira de ORGÂNICO, mas o caminhão 101 está ocupado.
+
+# A Central deve ter despachado o caminhão de VIDRO (103) e METAL (104).
+# A lixeira 5 (ORGÂNICO) deve ficar na fila, pois o caminhão 101 está em rota.
+PASSAR_TURNO
+
+# O caminhão 101 deve ter retornado à garagem e agora pode ser despachado
+# para a lixeira 5 que estava aguardando.
+PASSAR_TURNO
+
+# Caminhão 101 coleta a lixeira 5.
+PASSAR_TURNO
+
+# Turno final para mostrar o sistema estável.
+PASSAR_TURNO

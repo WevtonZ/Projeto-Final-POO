@@ -1,11 +1,7 @@
 package com.suaempresa.cidadeinteligente.util;
 
-/*
-* Classe com o intuito de localizar objetos na nossa cidade, como as lixeiras eletrônicas espalhadas
-* */
-
 public class Localizacao {
-    private final double x, y; // coordenadas de algum ponto na cidade.
+    private final double x, y;
 
     public Localizacao(double x, double y){
         this.x = x;
@@ -18,6 +14,17 @@ public class Localizacao {
 
     public double getY() {
         return y;
+    }
+
+    /**
+     * Calcula a distância euclidiana (em linha reta) até outra localização.
+     * @param outra A outra localização para a qual a distância será calculada.
+     * @return A distância como um valor double.
+     */
+    public double distanciaPara(Localizacao outra) {
+        double dx = this.x - outra.getX();
+        double dy = this.y - outra.getY();
+        return Math.sqrt(dx*dx + dy*dy);
     }
 
     @Override
