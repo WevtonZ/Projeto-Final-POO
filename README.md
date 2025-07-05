@@ -15,9 +15,33 @@ Padrão Singleton: Usado na Central de Controle do código, para gerarmos apenas
 
 Padrão Factory Method: Usado na criação de instâncias da lixeira. Cada lixeira tem um ID, e deixar isso para o usuário controlar quais IDs já foram usados pode ser um problema. Então, delegamos a tarefa de criar a lixeira com o ID correto para um método "fábrica", que controla os IDs já gerados e garante que, sempre que uma lixeira for criada, ela tenha um valor diferente das outras lixeiras.
 
-Padrão Iterator: Utilizado na hora de percorrer as listas de lixeiras. Utilizado de forma implícita pela linguagem, na utilização de ArrayList de Lixeiras Inteligentes.
+Padrão Iterator: Utilizado na hora de percorrer a lista de caminhões.
 
 Padrão Observer: Utilizado na Central de Controle como uma observadora e na Lixeira Inteligente como um observado. A ideia é que a lixeira notifica a central que ela está cheia para tirar o trabalho da central de verificar todas as lixeiras para saber, uma por uma, se elas estão cheias ou não. Ou seja, a tarefa de ver se a lixeira está cheia foi delegada para a própria lixeira e não é algo que a central de controle vai fazer.
+
+## Como executar:
+
+Primeiro clone o repositório usando **git clone https://github.com/WevtonZ/Projeto-Final-POO/edit/main/README.md** .
+
+É preferível que seja usado o Intellij para rodar o Simulador, que é onde se encontra o programa principal. Com o Intellij em mãos, devemos adicionar uma configuração nova. Vamos ao passo a passo disso:
+
+1. No topo do programa aberto, teremos a seguinte imagem:
+
+   ![image](https://github.com/user-attachments/assets/b53a5fff-ab0a-410e-a60a-748fbe791236)
+  Vamos em Edit Configurations...
+
+2. Nela, veremos a seguinte guia:
+     ![image](https://github.com/user-attachments/assets/24ec05d3-2a17-4070-9e86-ca3b224eeded)
+  Aqui, apertaremos o botao **+**, encontrado no canto superior esquerdo, e escolheremos Application. Com isso, aparecerá a seguinte tela:
+     ![image](https://github.com/user-attachments/assets/6efd5e2c-38ac-4ca4-bcab-6c402f0d7fec)
+   Aonde está o campo escrito "Main class", aperte no botão do papel dentro dessa caixa que ele buscará uma instância da Main no seu código. Como só existe uma, ele achará uma instância na classe Simulador, que é a classe que queremos. Selecione-a, e agora, teremos a seguinte imagem.
+   ![image](https://github.com/user-attachments/assets/8b8ad5db-970d-4195-8eb4-0225dbed9795)
+   Abaixo, teremos um outro campo escrito "Program Arguments", e nele, colocaremos o nome do nosso arquivo .txt. Eu escolhi o nome **simulacao.txt**.
+   ![image](https://github.com/user-attachments/assets/002a6c3d-b72d-4842-bace-d25929187c97)
+  Agora, cliquemos em Apply no canto inferior direito e depois em OK.
+
+  Agora, todos os casos de teste que quisermos rodar, sairá do arquivo simulacao.txt.
+
 
 ## UML
 
