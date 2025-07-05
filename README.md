@@ -28,16 +28,25 @@ Primeiro clone o repositório usando **git clone https://github.com/WevtonZ/Proj
 1. No topo do programa aberto, teremos a seguinte imagem:
 
    ![image](https://github.com/user-attachments/assets/b53a5fff-ab0a-410e-a60a-748fbe791236)
+   
   Vamos em Edit Configurations...
 
-2. Nela, veremos a seguinte guia:
+3. Nela, veremos a seguinte guia:
+   
      ![image](https://github.com/user-attachments/assets/24ec05d3-2a17-4070-9e86-ca3b224eeded)
-  Aqui, apertaremos o botao **+**, encontrado no canto superior esquerdo, e escolheremos Application. Com isso, aparecerá a seguinte tela:
-     ![image](https://github.com/user-attachments/assets/6efd5e2c-38ac-4ca4-bcab-6c402f0d7fec)
+
+Aqui, apertaremos o botao **+**, encontrado no canto superior esquerdo, e escolheremos Application. Com isso, aparecerá a seguinte tela:
+
+![image](https://github.com/user-attachments/assets/6efd5e2c-38ac-4ca4-bcab-6c402f0d7fec)
+   
    Aonde está o campo escrito "Main class", aperte no botão do papel dentro dessa caixa que ele buscará uma instância da Main no seu código. Como só existe uma, ele achará uma instância na classe Simulador, que é a classe que queremos. Selecione-a, e agora, teremos a seguinte imagem.
+  
    ![image](https://github.com/user-attachments/assets/8b8ad5db-970d-4195-8eb4-0225dbed9795)
+   
    Abaixo, teremos um outro campo escrito "Program Arguments", e nele, colocaremos o nome do nosso arquivo .txt. Eu escolhi o nome **simulacao.txt**.
+  
    ![image](https://github.com/user-attachments/assets/002a6c3d-b72d-4842-bace-d25929187c97)
+  
   Agora, cliquemos em Apply no canto inferior direito e depois em OK.
 
   Agora, todos os casos de teste que quisermos rodar, sairá do arquivo simulacao.txt.
